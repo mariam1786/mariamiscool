@@ -50,7 +50,7 @@ nav a:hover {
     font-size: 1.5em;
     color: rgb(147, 19, 19);
     font-family: 'Playfair Display', serif;
-    text-shadow: 2px 2px 8px rgba(132, 8, 8, 0.5);
+    text-shadow: 2px 2px 8px rgba(132, 8, 8, 0.7);
     margin-top: 15px; /* Adds space between name and welcome message */
 }
 
