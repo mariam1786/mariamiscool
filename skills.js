@@ -1,25 +1,25 @@
-console.log("JavaScript is working!");
+// Select the cat image
+const cat = document.getElementById('cat');
 
+// Variable to track the spin state
+let isSpinning = false;
 
+// Add click event listener
+cat.addEventListener('click', function() {
+    if (!isSpinning) {
+        isSpinning = true; // Set spinning state to true
 
+        // Apply 360 degree rotation to spin the cat
+        cat.style.transform = 'rotate(360deg)';
 
-// JavaScript to make the cat move when clicked
-document.addEventListener('DOMContentLoaded', () => {
-    const cat = document.getElementById('cat');
-    const catText = document.getElementById('cat-text');
-
-    cat.addEventListener('click', () => {
-        // Move the cat to a random position on the screen
-        const randomX = Math.floor(Math.random() * (window.innerWidth - cat.width));
-        const randomY = Math.floor(Math.random() * (window.innerHeight - cat.height));
-
-        cat.style.position = 'absolute';
-        cat.style.left = `${randomX}px`;
-        cat.style.top = `${randomY}px`;
-
-        // Update the text below the cat
-        catText.textContent = "You found me! Press me to move again!";
-    });
+        // Wait for the transition to complete (duration of 0.5s)
+        setTimeout(() => {
+            // Reset the rotation back to 0 degrees after 0.5s (500ms)
+            cat.style.transform = 'rotate(0deg)';
+            isSpinning = false; // Allow next spin
+        }, 500); // Timeout duration matches the transition duration (0.5s)
+    }
 });
+
 
 

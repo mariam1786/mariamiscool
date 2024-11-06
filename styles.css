@@ -24,33 +24,40 @@ nav a:hover {
     color: #747268; /* Brighter gold on hover */
 }
 
+/* Hero Section */
 .hero {
     position: relative;
-    height: 100vh; /* Full viewport height */
-    background: url('daarkaesthetic.gif') no-repeat center center fixed; /* Full-screen GIF */
-    background-size: cover; /* Cover the entire viewport */
+    height: 100vh;
+    background: url('daarkaesthetic.gif') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
 }
 
+/* Name Styling */
 .name {
-    font-size: 3em; /* Adjust the size of your name */
+    font-size: 3em;
     color: rgb(147, 19, 19);
-    font-family: 'Playfair Display', serif; /* Use the elegant font */
-    text-align: center;
-    text-shadow: 2px 2px 8px rgba(132, 8, 8, 0.7); /* Add shadow for better visibility */
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 8px rgba(132, 8, 8, 0.7);
+    margin: 0;
 }
 
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: black;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+/* Welcome Message Styling */
+.welcome-message {
+    font-size: 1.5em;
+    color: rgb(147, 19, 19);
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 8px rgba(132, 8, 8, 0.5);
+    margin-top: 15px; /* Adds space between name and welcome message */
 }
+
+
+
+
+
 
 
 /*ABOUT PAGE */
@@ -113,18 +120,24 @@ nav a:hover {
     width: 100%;
     max-width: 300px;
     height: auto;
-    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better focus */
     border-radius: 5px;
 }
 
+
+.about-video video {
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better focus */
+}
+
 footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 35px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background-color: black;   /* Set the footer background color */
+    color: white;              /* Set the footer text color */
+    text-align: center;        /* Center-align text */
+    padding: 32px 0;          /* Vertical padding, adjust as necessary */
+    position: relative;        /* Use relative positioning */
+    width: 100%;               /* Ensure the footer takes full width */
+    clear: both;               /* Clear any floating elements */
 }
 
 
@@ -136,7 +149,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 50px auto;
+    margin: 130px auto;
     max-width: 1000px;
 }
 
@@ -219,4 +232,64 @@ footer {
 
 
 
+.linkedin-logo {
+    width: 30px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 10px; /* Space above the logo */
+    transition: transform 0.3s ease; /* Add a nice effect when hovering */
+}
+
+.linkedin-logo:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+.skills-content {
+    display: flex;
+    justify-content: space-around; /* Space out the boxes */
+    margin-bottom: 20px; /* Space between skills and achievements */
+}
+
+.skill-box {
+    position: relative;
+    width: 200px; /* Width of the box */
+    height: 200px; /* Height of the box */
+    perspective: 1000px; /* Gives depth to the flip effect */
+    margin: 20px; /* Space between boxes */
+}
+
+.skill-front,
+.skill-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back side when flipped */
+    border: 2px solid #940000; /* Red border */
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 1.5em; /* Font size */
+    transition: transform 0.6s; /* Smooth transition for flipping */
+}
+
+.skill-front {
+    background-color: #fdfcfc; /* Front side background color */
+    color: #000000; /* Front side text color */
+}
+
+.skill-back {
+    background-color: #940000; /* Back side background color */
+    color: white; /* Back side text color */
+    transform: rotateY(180deg); /* Initially rotate the back side */
+}
+
+/* Flip the card on hover */
+.skill-box:hover .skill-front {
+    transform: rotateY(180deg);
+}
+
+.skill-box:hover .skill-back {
+    transform: rotateY(0deg);
+}
 

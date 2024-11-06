@@ -24,7 +24,7 @@ nav a {
 
 nav a:hover {
     color: #b31212; /* Shiny gold on hover */
-        text-shadow: 0 0 5px #a41a1a, 0 0 10px #941010; /* Glowing effect */
+    text-shadow: 0 0 5px #a41a1a, 0 0 10px #941010; /* Glowing effect */
 }
 
 /* Main content styling */
@@ -37,11 +37,20 @@ main {
 /* Interactive cat section */
 .interactive-cat {
     margin-top: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
 }
 
-.interactive-cat img {
-    width: 150px;
+#cat {
+    position: relative;
     cursor: pointer;
+    width: 200px; /* Adjust the width as needed */
+    transition: transform 0.5s ease; /* Smooth transition for spinning */
+    margin: 0 auto; /* Centers the cat horizontally */
 }
 
 #cat-text {
@@ -49,28 +58,105 @@ main {
     font-style: italic;
 }
 
-/* Achievements and skills section */
-.achievements h2 {
+
+/* Skills content styling */
+.skills-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow boxes to wrap if necessary */
+    justify-content: space-between; /* Space out the boxes */
+}
+
+.skill-box {
+    background-color: #f8f8f8; /* Background color for the skill box */
+    border: 2px solid #940000; /* Red border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space inside the box */
+    margin: 10px; /* Space between boxes */
+    width: calc(45% - 20px); /* Width of the boxes, adjusted for margin */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.skill-link {
+    display: inline-block; /* Makes it behave like a block for padding */
+    background-color: #940000; /* Red background for the link */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Space inside the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.skill-link:hover {
+    background-color: #bb0000; /* Darker red on hover */
+}
+
+
+/* Achievements section styles */
+.achievements {
     margin-top: 40px;
-    font-size: 1.8em;
-}
-
-.achievements ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.achievements li {
-    margin: 10px 0;
-}
-
-/* Footer styles */
-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 0;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-bottom: 40px;
+}
+
+.achievements h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.achievements-content {
+    display: flex;               /* Use flexbox for horizontal layout */
+    justify-content: space-around; /* Space boxes evenly in the row */
+    align-items: flex-start;    /* Align boxes at the start */
+    gap: 30px;
+    flex-wrap: nowrap;          /* Prevent wrapping to a new line */
+    max-width: 1200px;          /* Optional: set a max width for the container */
+    margin: 0 auto;             /* Center the container */
+}
+
+.achievement-box {
+    background-color: #f7f5f5; /* Light background for the achievement box */
+    border: 2px solid #940000; /* Match the border color with skills */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space inside the box */
+    margin: 10px; /* Space between boxes */
+    width: 22%; /* Width adjusted to keep four boxes in one row */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for achievement boxes */
+.achievement-box:hover {
+    transform: translateY(-5px); /* Lift the box on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Title and description styles */
+.achievement-title {
+    font-weight: bold;
+    font-size: 1.2em; /* Slightly larger font for titles */
+}
+
+.achievement-description {
+    margin-top: 10px; /* Space between title and description */
+}
+
+/* Certificate link styles */
+.certificate-link {
+    display: inline-block; /* Makes it behave like a block for padding */
+    background-color: #940000; /* Red background for the link */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Space inside the button */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.certificate-link:hover {
+    background-color: #bb0000; /* Darker red on hover */
+}
+
+@media (max-width: 768px) {
+    .skill-box {
+        width: calc(100% - 20px); /* Stacks them vertically on smaller screens */
+    }
 }
